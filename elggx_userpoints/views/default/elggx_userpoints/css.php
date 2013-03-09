@@ -1,7 +1,7 @@
 <?php
-	/**
-	 * userpoint CSS
-	 */
+/**
+ * userpoint CSS
+ */
 ?>
 
 .userpoints_profile{
@@ -19,7 +19,6 @@
 
 #userpoints_toppoints_widget_container {
     text-align:left;
-    /* background-color:#00ffff; */
 }
 
 .elggx_userpoints_actions h3 {

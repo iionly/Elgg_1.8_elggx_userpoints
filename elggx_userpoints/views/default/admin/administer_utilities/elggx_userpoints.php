@@ -1,7 +1,5 @@
 <?php
 
-global $CONFIG;
-
 $tab = get_input('tab') ? get_input('tab') : 'list';
 
 $params = array(

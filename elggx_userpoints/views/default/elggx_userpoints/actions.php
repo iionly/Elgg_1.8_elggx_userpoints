@@ -1,15 +1,15 @@
 <?php
 
-    $plugin = elgg_get_plugin_from_id('elggx_userpoints');
+$plugin = elgg_get_plugin_from_id('elggx_userpoints');
 
-    $ts = time();
-    $token = generate_action_token($ts);
+$ts = time();
+$token = generate_action_token($ts);
 
 ?>
 
 
 <div class="elggx_userpoints_actions">
-  <form method="POST" action="<?php echo $vars['url']; ?>action/elggx_userpoints/settings">
+  <form method="POST" action="<?php echo elgg_get_site_url(); ?>action/elggx_userpoints/settings">
       <?php echo elgg_view('input/hidden', array('name' => '__elgg_token', 'value' => $token)); ?>
       <?php echo elgg_view('input/hidden', array('name' => '__elgg_ts', 'value' => $ts)); ?>
 
@@ -148,8 +148,15 @@
     <tr><td colspan="2"><hr /><br /></td></tr>
 
     <tr>
+        <td><label><?php echo elgg_echo('userpoints_standard:create_album'); ?></label></td>
+        <td><?php echo elgg_view('input/text', array('name' => "params[album]", 'value' => $plugin->album)); ?></td>
+    </tr>
+
+    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+    <tr>
         <td><label><?php echo elgg_echo('userpoints_standard:upload_photo'); ?></label></td>
-        <td><?php echo elgg_view('input/text', array('name' => "params[upload_photo]", 'value' => $plugin->upload_photo)); ?></td>
+        <td><?php echo elgg_view('input/text', array('name' => "params[image]", 'value' => $plugin->image)); ?></td>
     </tr>
 
     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>

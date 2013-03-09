@@ -1,15 +1,10 @@
 <?php
 
-    global $CONFIG;
+$params = get_input('params');
 
-    admin_gatekeeper();
-    action_gatekeeper();
+$user = get_user_by_username($params['username']);
 
-    $params = get_input('params');
+userpoints_add($user->guid, $params['points'], $params['description'], 'admin');
 
-    $user = get_user_by_username($params['username']);
-
-    userpoints_add($user->guid, $params['points'], $params['description'], 'admin');
-
-    system_message(sprintf(elgg_echo("elggx_userpoints:add:success"), $params['points'], elgg_get_plugin_setting('lowerplural', 'elggx_userpoints'), $params['username']));
-    forward($_SERVER['HTTP_REFERER']);
+system_message(sprintf(elgg_echo("elggx_userpoints:add:success"), $params['points'], elgg_echo('elggx_userpoints:lowerplural'), $params['username']));
+forward(REFERER);

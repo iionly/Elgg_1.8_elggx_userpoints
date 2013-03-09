@@ -1,7 +1,16 @@
 <?php
+/**
+ * Elggx Userpoints Plugin
+ *
+ * Index page Toppoints widget for Widget Manager plugin
+ *
+ */
 
-$limit = $vars['entity']->num_display;
-$limit = $limit ? $limit : 5;
+// get widget settings
+$limit = sanitise_int($vars["entity"]->toppoints_count, false);
+if(empty($limit)){
+        $limit = 10;
+}
 
 $options = array('type' => 'user', 'limit' => $limit, 'order_by_metadata' =>  array('name' => 'userpoints_points', 'direction' => DESC, 'as' => integer));
 $options['metadata_name_value_pairs'] = array(array('name' => 'userpoints_points', 'value' => 0,  'operand' => '>'));

@@ -1,6 +1,6 @@
 Elggx Userpoints plugin for Elgg 1.8
-Latest Version: 1.8.2
-Released: 2012-04-29
+Latest Version: 1.8.3
+Released: 2013-03-09
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -19,6 +19,24 @@ Installation:
 
 
 Changelog:
+
+1.8.3 (iionly):
+
+- Added a German language file,
+- Index page widget added (useable with Widget Manager plugin),
+- Branding (e.g. configuring the words to be used for the "Points" terms) moved from plugin settings to language files (to allow for branding to be configured in more than one language),
+- Better visibility of "Reset All Points" link by making it an Elgg Action button,
+- Some general code cleanup,
+- Fixed userpoints handling of Tidypics upload images and create albums actions,
+- Fixed userpoints handling of invitations (among getting it to work at all Siteaccess plugin and Contact_importer plugin are now no longer support in invitation userpoint handling).
+
+Remarks about userpoints for invitation of friends:
+
+- The same person (related to the email address used for the invitation) can be invited by different users and each of these users will be awarded points for inviting this person.
+- You can opt for userpoints only to be awarded after the invited person joined the site or to be awarded already when the invitation is sent. In both cases a pending userpoint entry will be generated (appearing on the "Moderate" tab). In the first case the pending userpoints entry will contain the userpoints to be awarded to the user when the invited person joins the site. In the latter case the userpoints will be awarded immediately and the pending userpoints entry (0 points pending) will serve as blocking mechanism preventing the same user from inviting the same person more than once.
+- If you use the Uservalidationbyemail plugin the pending userpoints will only be awarded after the account of the invited user is validated (or an admin validates the account). If you don't use this plugin the points are awarded when the user registers an account already.
+- If you use the expiration date plugin you can define an interval for pending userpoints for outstanding invitations to expire. Or in case you opt for userpoint for invitations to be awarded immediately the pending userpoints entry blocking the re-invitations of the same person will expire.
+
 
 1.8.2 (iionly):
 
