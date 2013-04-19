@@ -29,17 +29,33 @@ $html .= "<tr><td colspan=3><hr></td></tr>";
 
 foreach ($entities as $entity) {
 
-    $html .= "<tr><td><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_userpoints?tab=detail&user_guid={$entity->guid}\">{$entity->name}</a></td>";
+    $html .= "<tr><td><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_userpoints?tab=detail&user_guid={$entity->guid}\">{$entity->username}</a></td>";
     $html .= "<td><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_userpoints?tab=detail&user_guid={$entity->guid}\">{$entity->userpoints_points}</a></td>";
     $html .= "<td>" . elgg_view("output/confirmlink", array(
                           'href' => elgg_get_site_url() . "action/elggx_userpoints/reset?user_guid={$entity->guid}&__elgg_token=$token&__elgg_ts=$ts",
                           'text' => elgg_echo('elggx_userpoints:reset'),
-                          'confirm' => sprintf(elgg_echo('elggx_userpoints:reset:confirm'), $entity->name)
+                          'confirm' => sprintf(elgg_echo('elggx_userpoints:reset:confirm'), $entity->username)
                       ));
     $html .= "</td></tr>";
 
 }
-
+$html .= "<tr><td colspan=3><hr></td></tr>";
 $html .= "</table></div>";
+
+$html .= "<br><br>";
+$html .=  elgg_echo('elggx_userpoints:restore_help');
+$form_body .= elgg_view('input/text', array('name' => 'username')) . "<br>";
+$form_body .= elgg_view('input/submit', array('value' => elgg_echo('elggx_userpoints:restore')));
+$action_url = elgg_get_site_url() . "action/elggx_userpoints/restore";
+$html .= elgg_view('input/form', array('body' => $form_body, 'action' => $action_url));
+
+$html .= "<br>" . elgg_echo('elggx_userpoints:restore_all_help');
+$html .= "<br><br>";
+$html .= elgg_view("output/confirmlink", array(
+                      'href' => elgg_get_site_url() . "action/elggx_userpoints/restore_all?__elgg_token=$token&__elgg_ts=$ts",
+                      'text' => elgg_echo('elggx_userpoints:restore_all'),
+                      'confirm' => elgg_echo('elggx_userpoints:restore_all:confirm'),
+                      'class' => 'elgg-button elgg-button-action'
+                  ));
 
 echo $html;

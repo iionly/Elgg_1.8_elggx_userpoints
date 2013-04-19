@@ -1,11 +1,12 @@
 <?php
 
-// Include the Userpoint class
-require_once dirname(__FILE__) . "/lib/userpoint.php";
-
 elgg_register_event_handler('init','system','userpoints_init');
 
 function userpoints_init() {
+
+    // Register library
+    elgg_register_library('userpoints_library', elgg_get_plugins_path() . 'elggx_userpoints/lib/userpoint.php');
+    elgg_load_library('userpoints_library');
 
     // Register the userpoint entity
     elgg_register_entity_type('object', 'userpoint', 'Userpoint');
@@ -44,6 +45,8 @@ function userpoints_init() {
     elgg_register_action("elggx_userpoints/moderate", "$base_dir/moderate.php", 'admin');
     elgg_register_action("elggx_userpoints/add", "$base_dir/add.php", 'admin');
     elgg_register_action("elggx_userpoints/reset", "$base_dir/reset.php", 'admin');
+    elgg_register_action("elggx_userpoints/restore", "$base_dir/restore.php", 'admin');
+    elgg_register_action("elggx_userpoints/restore_all", "$base_dir/restore_all.php", 'admin');
 }
 
 /**

@@ -1,6 +1,6 @@
 Elggx Userpoints plugin for Elgg 1.8
-Latest Version: 1.8.3
-Released: 2013-03-09
+Latest Version: 1.8.4
+Released: 2013-04-19
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -19,6 +19,11 @@ Installation:
 
 
 Changelog:
+
+1.8.4 (iionly):
+
+- New admin options to restore (re-calculate) a user's userpoints or all users' userpoints. This option might be useful in case the metadata entry containing a user's current number of userpoints gets corrupted due to server glitches.
+
 
 1.8.3 (iionly):
 
