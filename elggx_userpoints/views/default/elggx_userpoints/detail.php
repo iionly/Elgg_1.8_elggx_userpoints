@@ -6,6 +6,8 @@ $user_guid = get_input('user_guid');
 $ts = time();
 $token = generate_action_token($ts);
 
+$limit = 10;
+
 $count    = elgg_get_entities_from_metadata(array(
           'metadata_name' => 'meta_moderate',
           'metadata_value' => 'approved',
@@ -22,15 +24,15 @@ $entities = elgg_get_entities_from_metadata(array(
           'type' => 'object',
           'subtype' => 'userpoint',
           'owner_guid' => $user_guid,
-          'limit' => 10,
+          'limit' => $limit,
           'offset' => $offset
           ));
 
 $nav = elgg_view('navigation/pagination',array(
-    'base_url' => $_SERVER['REQUEST_URI'],
+    'base_url' => elgg_get_site_url() . "admin/administer_utilities/elggx_userpoints?tab=detail",
     'offset' => $offset,
     'count' => $count,
-    'limit' => 5
+    'limit' => $limit
 ));
 
 $html = $nav;

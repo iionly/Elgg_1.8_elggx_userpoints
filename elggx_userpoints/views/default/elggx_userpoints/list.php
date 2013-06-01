@@ -14,10 +14,10 @@ $options['metadata_name_value_pairs'] = array(array('name' => 'userpoints_points
 $entities = elgg_get_entities_from_metadata($options);
 
 $nav = elgg_view('navigation/pagination',array(
-    'base_url' => $_SERVER['REQUEST_URI'],
+    'base_url' => elgg_get_site_url() . "admin/administer_utilities/elggx_userpoints?tab=list",
     'offset' => $offset,
     'count' => $count,
-    'limit' => 5
+    'limit' => $limit
 ));
 
 $html = $nav;

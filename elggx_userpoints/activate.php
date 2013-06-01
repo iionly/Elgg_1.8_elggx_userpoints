@@ -44,8 +44,8 @@ if ($oldversion && !$current_version) {
     elgg_set_plugin_setting('expire_invite', $pointssettings->expire_invite, 'elggx_userpoints');
 
     // Set new version
-    elgg_set_plugin_setting('version', '1.8.4', 'elggx_userpoints');
-} else if ($current_version != '1.8.4') {
+    elgg_set_plugin_setting('version', '1.8.5', 'elggx_userpoints');
+} else if ($current_version != '1.8.5') {
     // Set new version
-    elgg_set_plugin_setting('version', '1.8.4', 'elggx_userpoints');
+    elgg_set_plugin_setting('version', '1.8.5', 'elggx_userpoints');
 }

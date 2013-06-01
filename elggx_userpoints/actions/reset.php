@@ -18,7 +18,8 @@ if ($user_guid > 0) {
     elgg_delete_metadata($options);
 } else {
     // Remove all userpoints_points metadata
-    delete_data("DELETE from {$CONFIG->dbprefix}metadata where name_id=" . add_metastring('userpoints_points'));
+    $prefix = elgg_get_config('dbprefix');
+    delete_data("DELETE from {$prefix}metadata where name_id=" . add_metastring('userpoints_points'));
 }
 
 system_message(sprintf(elgg_echo("elggx_userpoints:reset:success"), elgg_echo('elggx_userpoints:lowerplural')));

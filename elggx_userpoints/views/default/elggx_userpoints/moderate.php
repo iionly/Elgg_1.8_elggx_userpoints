@@ -1,6 +1,8 @@
 <?php
 
 $offset = (int)get_input('offset');
+$limit = 10;
+
 $ts = time ();
 $token = generate_action_token ( $ts );
 
@@ -18,15 +20,15 @@ $entities = elgg_get_entities_from_metadata(array(
           'metadata_value' => 'pending',
           'type' => 'object',
           'subtype' => 'userpoint',
-          'limit' => 10,
+          'limit' => $limit,
           'offset' => $offset
           ));
 
 $nav = elgg_view('navigation/pagination',array(
-    'base_url' => $_SERVER['REQUEST_URI'],
+    'base_url' => elgg_get_site_url() . "admin/administer_utilities/elggx_userpoints?tab=moderate",
     'offset' => $offset,
     'count' => $count,
-    'limit' => 5
+    'limit' => $limit
 ));
 
 $html = $nav;

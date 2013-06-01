@@ -1,6 +1,6 @@
 Elggx Userpoints plugin for Elgg 1.8
-Latest Version: 1.8.4
-Released: 2013-04-19
+Latest Version: 1.8.5
+Released: 2013-06-01
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -19,6 +19,11 @@ Installation:
 
 
 Changelog:
+
+1.8.5 (iionly):
+
+- Fixed pagination on list, detail and moderate tabs on Elggx Userpoints plugin settings page.
+
 
 1.8.4 (iionly):
 
