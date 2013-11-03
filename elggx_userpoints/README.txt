@@ -1,6 +1,6 @@
 Elggx Userpoints plugin for Elgg 1.8
-Latest Version: 1.8.5
-Released: 2013-06-01
+Latest Version: 1.8.6
+Released: 2013-11-03
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -19,6 +19,11 @@ Installation:
 
 
 Changelog:
+
+1.8.6 (iionly):
+
+- Spanish language file added (thanks to Gonzalo / GEARinvent).
+
 
 1.8.5 (iionly):
 
