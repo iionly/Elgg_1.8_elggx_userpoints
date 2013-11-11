@@ -77,6 +77,13 @@ $token = generate_action_token($ts);
     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 
     <tr>
+        <td><label><?php echo elgg_echo('userpoints_standard:groupforumtopic'); ?></label></td>
+        <td><?php echo elgg_view('input/text', array('name' => "params[groupforumtopic]", 'value' => $plugin->groupforumtopic)); ?></td>
+    </tr>
+
+    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+    <tr>
         <td><label><?php echo elgg_echo('userpoints_standard:group_topic_post'); ?></label></td>
         <td><?php echo elgg_view('input/text', array('name' => "params[group_topic_post]", 'value' => $plugin->group_topic_post)); ?></td>
     </tr>

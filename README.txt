@@ -1,6 +1,6 @@
 Elggx Userpoints plugin for Elgg 1.8
-Latest Version: 1.8.6
-Released: 2013-11-03
+Latest Version: 1.8.7
+Released: 2013-11-11
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -19,6 +19,11 @@ Installation:
 
 
 Changelog:
+
+1.8.7 (iionly):
+
+- Fixed awarding of points on starting a new group discussion topic and replying in a group discussion.
+
 
 1.8.6 (iionly):
 
