@@ -97,6 +97,7 @@ $spa = array(
 'userpoints_standard:verify_email' => 'Validar direcciones de e-mail de Amigos?',
 'userpoints_standard:group' => 'Puntos por comenzar un Grupo:',
 'userpoints_standard:profile' => 'Puntos por editar el Perfil:',
+'userpoints_standard:profileicon' => 'Puntos para subir una imagen de Perfil:',
 'userpoints_standard:messageboard' => 'Puntos por publicar un mensaje en un Amigo:',
 'userpoints_standard:page_top' => 'Puntos por agregar una página de Wiki:',
 'userpoints_standard:likes' => 'Puntos por poner "Me gusta" a algún contenido:',
@@ -124,7 +125,7 @@ $spa = array(
 'userpoints_standard:1day' => '1 Día',
 'userpoints_standard:1week' => '1 Semana',
 'userpoints_standard:1month' => '1 Mes',
-'userpoints_standard:delete' => 'Borrar Puntos si el contenido por el que fueron otorgados se suprimió?',
+'userpoints_standard:delete' => 'Borrar Puntos si el contenido por el que fueron otorgados se suprimió?'
 );
 
 add_translation("es", $spa);

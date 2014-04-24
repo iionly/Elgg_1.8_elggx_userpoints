@@ -1,6 +1,6 @@
 Elggx Userpoints plugin for Elgg 1.8
-Latest Version: 1.8.7
-Released: 2013-11-11
+Latest Version: 1.8.8
+Released: 2014-04-24
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -19,6 +19,12 @@ Installation:
 
 
 Changelog:
+
+1.8.8 (iionly):
+
+- Added functionality to check integrity of a user's userpoint metadata entry on adding/substracting userpoints to avoid "Array()" issue to happen or fixing it if it already did happen (Can't promise this works as I've still not be able to reproduce this issue myself!),
+- Added option to awarding userpoints on uploading a profile image.
+
 
 1.8.7 (iionly):
 

@@ -98,6 +98,13 @@ $token = generate_action_token($ts);
     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 
     <tr>
+        <td><label><?php echo elgg_echo('userpoints_standard:profileicon'); ?></label></td>
+        <td><?php echo elgg_view('input/text', array('name' => "params[profileicon]", 'value' => $plugin->profileicon)); ?></td>
+    </tr>
+
+    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+    <tr>
         <td><label><?php echo elgg_echo('userpoints_standard:messageboard'); ?></label></td>
         <td><?php echo elgg_view('input/text', array('name' => "params[messageboard]", 'value' => $plugin->messageboard)); ?></td>
     </tr>

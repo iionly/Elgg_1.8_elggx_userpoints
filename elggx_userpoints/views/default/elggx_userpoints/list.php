@@ -34,7 +34,7 @@ foreach ($entities as $entity) {
     $html .= "<td>" . elgg_view("output/confirmlink", array(
                           'href' => elgg_get_site_url() . "action/elggx_userpoints/reset?user_guid={$entity->guid}&__elgg_token=$token&__elgg_ts=$ts",
                           'text' => elgg_echo('elggx_userpoints:reset'),
-                          'confirm' => sprintf(elgg_echo('elggx_userpoints:reset:confirm'), $entity->username)
+                          'confirm' => elgg_echo('elggx_userpoints:reset:confirm', array($entity->username))
                       ));
     $html .= "</td></tr>";
 

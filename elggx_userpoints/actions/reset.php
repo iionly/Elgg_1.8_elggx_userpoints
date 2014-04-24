@@ -22,5 +22,5 @@ if ($user_guid > 0) {
     delete_data("DELETE from {$prefix}metadata where name_id=" . add_metastring('userpoints_points'));
 }
 
-system_message(sprintf(elgg_echo("elggx_userpoints:reset:success"), elgg_echo('elggx_userpoints:lowerplural')));
+system_message(elgg_echo("elggx_userpoints:reset:success", array(elgg_echo('elggx_userpoints:lowerplural'))));
 forward(REFERER);
