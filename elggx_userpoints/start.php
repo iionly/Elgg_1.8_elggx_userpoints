@@ -365,14 +365,19 @@ function elggx_userpoints_su($unsu=false) {
 // In the following are functions for adding points for various actions
 
 function elggx_userpoints_object($event, $object_type, $object) {
-	if (function_exists('userpoints_add')) {
-		if ($event == 'create') {
+	if ($event == 'create') {
+		if (function_exists('userpoints_add')) {
 			$subtype = get_subtype_from_id($object->subtype);
-			if ($points = elgg_get_plugin_setting($subtype)) {
-				userpoints_add(elgg_get_logged_in_user_guid(), $points, $subtype, $subtype, $object->guid);
+			if ($points = elgg_get_plugin_setting($subtype, 'elggx_userpoints')) {
+				userpoints_add($object->owner_guid, $points, $subtype, $subtype, $object->guid);
 			}
-		} else if ($event == 'delete') {
-			userpoints_delete(elgg_get_logged_in_user_guid(), $object->guid);
+		}
+	} else if ($event == 'delete') {
+		if (function_exists('userpoints_delete')) {
+			$subtype = get_subtype_from_id($object->subtype);
+			if ($points = elgg_get_plugin_setting($subtype, 'elggx_userpoints')) {
+				userpoints_delete($object->owner_guid, $object->guid);
+			}
 		}
 	}
 
@@ -380,10 +385,10 @@ function elggx_userpoints_object($event, $object_type, $object) {
 }
 
 function elggx_userpoints_annotate_create($event, $object_type, $object) {
-	if ($points = elgg_get_plugin_setting($object->name)) {
+	if ($points = elgg_get_plugin_setting($object->name, 'elggx_userpoints')) {
 		if (function_exists('userpoints_add')) {
 			$description = $object->name;
-			userpoints_add(elgg_get_logged_in_user_guid(), $points, $description, $object_type, $object->entity_guid);
+			userpoints_add($object->owner_guid, $points, $description, $object_type, $object->entity_guid);
 		}
 	}
 
